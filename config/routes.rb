@@ -1,9 +1,11 @@
-Yakut::Application.routes.draw do
+Yakut::Application.routes.draw do 
   devise_for :teachers
   devise_for :admins
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  get 'admins/welcome', to: 'admins#welcome'
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
