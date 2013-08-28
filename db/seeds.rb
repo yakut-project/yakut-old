@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Must run 'rake db:seed' to create default admin
+Admin.new(email: 'foo@bar.com', password: 'password').save!
