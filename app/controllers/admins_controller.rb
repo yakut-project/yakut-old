@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
-	def welcome
+  layout 'executive'
+  def welcome
 	end
 end
