@@ -8,6 +8,9 @@ Yakut::Application.routes.draw do
   get 'admins/welcome', to: 'admins#welcome'
 
   get 'teachers/welcome', to: 'teachers#welcome'
+
+  get 'users/welcome', to: 'users#welcome'
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
