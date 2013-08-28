@@ -17,3 +17,10 @@
 
 # Ignore RubyMine's idea files
 /.idea
+
+
+# Linux
+.*
+!.gitignore
+*~
+
