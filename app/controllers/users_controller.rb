@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def welcome
-  end
+	before_action :authenticate_user!
+	def welcome
+	end
 end
