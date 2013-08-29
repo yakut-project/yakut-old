@@ -36,12 +36,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # User Model Update
 
       # Web Pages
-      t.string :webpage
-      t.string :stackoverflow_page
-      t.string :github_page
-      t.string :bitbucket_page
-      t.string :blog_page
-      t.string :twitter_page
+      t.string :website
+      t.string :stackoverflow
+      t.string :github
+      t.string :bitbucket
+      t.string :blog
+      t.string :twitter
 
       # Personal Info
       t.string :name

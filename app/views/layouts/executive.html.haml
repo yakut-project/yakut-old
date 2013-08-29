@@ -1,11 +1,13 @@
 %html
-	%head= render 'layouts/head'
+	%head
+		= render 'layouts/head'
+		= stylesheet_link_tag	"http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", media: "all", "data-turbolinks-track" => true
+		= stylesheet_link_tag    "executive", media: "all", "data-turbolinks-track" => true
 	%body
 		.container
 			= render 'layouts/navbar'
-			= render 'layouts/notices'
+			= render 'layouts/sidebar'
 			.row
-				= render 'layouts/sidebar'
-				.row-md-9
-					= yield
+				= render 'layouts/notices'
+				= yield
 			= render 'layouts/footer'
