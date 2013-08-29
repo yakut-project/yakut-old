@@ -12,4 +12,13 @@ class User < ActiveRecord::Base
   
   # Example usage for checking gender:
   # new_user.gender.male? (returns true or false)
+
+  validates :name, presence: true
+  validates :surname, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
+  validates :gender, presence:true
+  validates :bio, length: { maximum: 500 }
+
+
 end
