@@ -6,11 +6,6 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-
-gem 'devise'
-
-gem 'enumerize'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -39,6 +34,8 @@ end
 
 gem 'devise'
 gem 'devise-i18n'
+
+gem 'enumerize'
 
 gem 'haml-rails'
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
