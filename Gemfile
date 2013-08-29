@@ -43,6 +43,7 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'simple_form'
 
+gem "compass-rails", "~> 2.0.alpha.0"
 gem 'bootstrap-sass-rails', '~> 3.0.0'
 
 group :development do
