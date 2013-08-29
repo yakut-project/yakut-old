@@ -15,10 +15,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :surname, presence: true
-  validates :password, presence: true
-  validates :password_confirmation, presence: true
   validates :gender, presence:true
   validates :bio, length: { maximum: 500 }
-
+  validates :birthday, presence: true
 
 end
