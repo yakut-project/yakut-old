@@ -49,6 +49,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+# Add readline support
+gem 'rb-readline', '~> 0.5.0', require: 'readline'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,19 @@
+%nav.navbar.navbar-default
+	.navbar-header
+		%a.navbar-brand{href: '/'} Yakut
+	%ul.nav.navbar-nav
+		%li
+			%a Example link
+	%ul.nav.navbar-nav.navbar-right
+		%li
+			- if current_user
+				= link_to 'Logout', destroy_user_session_path, method: :DELETE
+			- elsif current_teacher
+				= link_to 'Logout', destroy_teacher_session_path, method: :DELETE
+			- elsif current_admin
+				= link_to 'Logout', destroy_admin_session_path, method: :DELETE
+			- else
+				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button}Login
+			
+
+

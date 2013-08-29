@@ -4,6 +4,8 @@
 		.container
 			= render 'layouts/navbar'
 			= render 'layouts/notices'
-			= yield
+			.row
+				= render 'layouts/sidebar'
+				.row-md-9
+					= yield
 			= render 'layouts/footer'
-		= render 'layouts/login_modal'
