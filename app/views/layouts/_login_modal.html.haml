@@ -8,11 +8,11 @@
 					%li.active
 						%a{href: '#userlogin', 'data-toggle' => 'tab'} User
 					%li.pull-right
-						%a{href: '#teacherlogin', 'data-toggle' => 'tab'} 
-							%small Teacher
-					%li.pull-right
 						%a{href: '#adminlogin', 'data-toggle' => 'tab'} 
 							%small Administrator
+					%li.pull-right
+						%a{href: '#teacherlogin', 'data-toggle' => 'tab'} 
+							%small Teacher
 				.tab-content
 					#userlogin.tab-pane.active 
 						= simple_form_for(:user, :url => user_session_path) do |f|
