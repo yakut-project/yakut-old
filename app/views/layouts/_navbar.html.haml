@@ -6,12 +6,9 @@
 			%a Example link
 	%ul.nav.navbar-nav.navbar-right
 		%li
-			- if current_user
-				= link_to 'Logout', destroy_user_session_path, method: :DELETE
-			- elsif current_teacher
-				= link_to 'Logout', destroy_teacher_session_path, method: :DELETE
-			- elsif current_admin
-				= link_to 'Logout', destroy_admin_session_path, method: :DELETE
+			- logged_in = current_user ? :user : (current_teacher ? :teacher : (current_admin ? :admin : nil))
+			- if logged_in 
+				= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
 			- else
 				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button}Login
 			
