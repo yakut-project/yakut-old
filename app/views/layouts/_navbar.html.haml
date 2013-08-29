@@ -5,12 +5,19 @@
 		%li
 			%a Example link
 	%ul.nav.navbar-nav.navbar-right
-		%li
-			- logged_in = current_user ? :user : (current_teacher ? :teacher : (current_admin ? :admin : nil))
-			- if logged_in 
-				= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
-			- else
-				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button}Login
+		- logged_in = (current_user or current_teacher or current_admin)
+		- if logged_in 
+			%li.dropdown
+				%a.dropdown-toggle{'data-toggle' => 'dropdown'}
+					= logged_in.email
+					%b.caret
+				%ul.dropdown-menu
+					-if current_user
+						%li= link_to 'My Account', edit_registration_path(logged_in)
+					-else
+						%li= link_to 'Dashboard', send("#{logged_in.class.name.tableize}_welcome_path")
+					%li= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
+		- else
+			%li
+				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button} Login
 			
-
-
