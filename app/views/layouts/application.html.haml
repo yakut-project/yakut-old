@@ -1,9 +1,9 @@
 %html
 	%head= render 'layouts/head'
 	%body
+		= render 'layouts/navbar'
 		.container
-			= render 'layouts/navbar'
 			= render 'layouts/notices'
 			= yield
-			= render 'layouts/footer'
+		= render 'layouts/footer'
 		= render 'layouts/login_modal'

@@ -1,26 +1,29 @@
-%nav.navbar.navbar-default
-	.navbar-header
-		%a.navbar-brand{href: '/'} Yakut
-	%ul.nav.navbar-nav
-		%li
-			%a Example link
-	%ul.nav.navbar-nav.navbar-right
-		- logged_in = (current_user or current_teacher or current_admin)
-		- if logged_in 
-			%li.dropdown
-				%a.dropdown-toggle{'data-toggle' => 'dropdown'}
-					= logged_in.email
-					%b.caret
-				%ul.dropdown-menu
-					-if current_user
-						%li= link_to 'My Account', edit_registration_path(logged_in)
-					-else
-						%li= link_to 'Dashboard', send("#{logged_in.class.name.tableize}_welcome_path")
-					%li= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
-		- else
+%nav.navbar.navbar-default#navbar
+	.container
+		.navbar-header
+			%a.navbar-brand{href: '/'} 
+				%i.icon-asterisk.icon-large
+				Yakut
+		%ul.nav.navbar-nav
 			%li
-				=link_to "Register", new_user_registration_path, class: "btn"
-			%li
-				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button} Login
-			
+				%a Example link
+		%ul.nav.navbar-nav.navbar-right
+			- logged_in = (current_user or current_teacher or current_admin)
+			- if logged_in 
+				%li.dropdown
+					%a.dropdown-toggle{'data-toggle' => 'dropdown'}
+						= logged_in.email
+						%b.caret
+					%ul.dropdown-menu
+						-if current_user
+							%li= link_to 'My Account', edit_registration_path(logged_in)
+						-else
+							%li= link_to 'Dashboard', send("#{logged_in.class.name.tableize}_welcome_path")
+						%li= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
+			- else
+				%li
+					=link_to "Register", new_user_registration_path, class: "btn"
+				%li
+					%a.btn{'data-toggle' => 'modal', href: '#login', role: :button} Login
+				
 
