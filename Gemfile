@@ -41,7 +41,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 gem 'haml-rails'
-gem 'simple_form'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 gem "compass-rails", "~> 2.0.alpha.0"
 gem 'bootstrap-sass-rails', '~> 3.0.0'
