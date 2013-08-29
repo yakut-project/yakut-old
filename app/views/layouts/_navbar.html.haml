@@ -19,5 +19,8 @@
 					%li= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
 		- else
 			%li
+				=link_to "Register", new_user_registration_path, class: "btn"
+			%li
 				%a.btn{'data-toggle' => 'modal', href: '#login', role: :button} Login
 			
+
