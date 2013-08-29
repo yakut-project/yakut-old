@@ -33,6 +33,22 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
+      # User Model Update
+
+      # Web Pages
+      t.string :website
+      t.string :stackoverflow
+      t.string :github
+      t.string :bitbucket
+      t.string :blog
+      t.string :twitter
+
+      # Personal Info
+      t.string :name
+      t.string :surname
+      t.text :bio
+      t.datetime :birthday
+      t.integer :gender
 
       t.timestamps
     end
