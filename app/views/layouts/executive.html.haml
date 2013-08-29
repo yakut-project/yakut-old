@@ -3,9 +3,8 @@
 	%body
 		.container
 			= render 'layouts/navbar'
-			= render 'layouts/notices'
+			= render 'layouts/sidebar'
 			.row
-				= render 'layouts/sidebar'
-				.row-md-9
-					= yield
+				= render 'layouts/notices'
+				= yield
 			= render 'layouts/footer'
