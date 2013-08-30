@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :gender, presence:true
   validates :bio, length: { maximum: 500 }
   validates :birthday, presence: true
-  validates :github, format: { with:  /\^[a-z0-9_-]+\$/, message: "Only letters,digits and dashes allowed" }
+  validates :github, format: { with:  /[a-zA-Z0-9\- ]+/ }, :allow_blank => true
 
   def github_url
     "https://github.com/#{github}" if github
