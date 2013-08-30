@@ -1,6 +1,11 @@
 yakut
 =====
 
+Version 0.4.0
+--------------
+- Integrate Hierapolis
+- Integrate comments system
+
 Version 0.3.0
 --------------
 - Add user-specific menus
@@ -22,3 +27,14 @@ Version 0.2.0
 Version 0.1.0
 --------------
 - Initialize project and created models.
+
+Credits
+--------
+- Utku Demir (Kickass Developer)
+- Kerem Bozdaş (Project Manager)
+- Ahmet Sezgin Durmuş (Marginalist Developer)
+- Yusuf Kaya Er (Hardcore Overclocker)
+- Gökhan Sağırlar (Code Predator)
+
+* Sorted descending by number of commits.
+

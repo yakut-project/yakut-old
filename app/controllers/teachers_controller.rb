@@ -4,5 +4,7 @@ class TeachersController < ApplicationController
 
   def welcome
   end
-
+  def userlist
+    @users = User.all
+  end
 end

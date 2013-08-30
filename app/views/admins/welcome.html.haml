@@ -1,5 +1,17 @@
 - content_for :title do
 	Admin Page
 
+- content_for :tools do
+	#toolbox
+		.btn-group
+			%a.btn{href: '#', data: {toggle: 'toolbar-tooltip'}, title: 'Building'}
+				%i.icon-building
+			%a.btn{href: '#', data: {toggle: 'toolbar-tooltip'}, title: 'Laptop'}
+				%i.icon-laptop
+			%a.btn{href: '#', data: {toggle: 'toolbar-tooltip'}, title: 'Calendar'}
+				%i.icon-calendar
+			%a.btn{href: '#', data: {toggle: 'toolbar-tooltip'}, title: 'Lemon'}
+				%i.icon-lemon
+				
 %h1 
 	%center Welcome to admin panel!

@@ -1,7 +1,8 @@
 %center
 	%h1 
-		.pull-right 
-			%small= link_to "Edit", edit_user_registration_path(@user)
+		- if @user == current_user
+			.pull-right 
+				%small= link_to "Edit", edit_user_registration_path(@user)
 		#{@user.name} #{@user.surname}
 	%hr/
 .row
@@ -10,13 +11,27 @@
 			%center= gravatar_tag @user.email, size: "200"
 		%table.table.table-striped{style: "margin-top: 20px;"}
 			%tr 
-				%td Email:
+				%td.text-center
+					%i.icon-envelope.icon-large
+				%td
+					Email:
 				%td= @user.email
 			%tr
-				%td Birthday:
+				%td.text-center 
+					%i.icon-calendar.icon-large
+				%td
+					Birthday:
 				%td= @user.birthday.strftime "%d %B %Y"
 			%tr
-				%td Gender:
+				%td.text-center 
+					- if @user.gender == "male"
+						%i.icon-male.icon-large
+					- elsif @user.gender == "female"
+						%i.icon-female.icon-large
+					- else
+						%i.icon-circle.icon-large
+				%td
+					Gender:
 				%td= @user.gender.humanize
 	.col-md-8
 		.well= @user.bio
@@ -24,17 +39,33 @@
 		%table.table.table-striped
 			- unless @user.blog.blank?
 				%tr
-					%td Blog
+					%td
+						%i.icon-edit.icon-large
+						Blog
 					%td= link_to @user.blog, @user.blog
 			- unless @user.website.blank?
 				%tr
-					%td Website
+					%td 
+						%i.icon-globe.icon-large
+						Website
 					%td= link_to @user.website, @user.website
 			
 			- infos = %w(Github Bitbucket StackOverflow Twitter)
 			- infos.select { |n| not @user.send("#{n.downcase}").blank? }.each do |n|
 				%tr
-					%td= n
+					%td
+						- if n.downcase == "github"
+							%i.icon-github.icon-large
+						- elsif n.downcase == "stackoverflow"
+							%i.icon-stackexchange.icon-large
+						- elsif n.downcase == "bitbucket"
+							%i.icon-bitbucket.icon-large
+						- elsif n.downcase == "twitter"
+							%i.icon-twitter.icon-large
+						= n
 					%td= link_to @user.send("#{n.downcase}_url"), @user.send("#{n.downcase}_url")
-			
+-if current_teacher
+	.row
+		%h2 Comments
+		=render "users/comments"
 			
