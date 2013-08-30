@@ -1,0 +1,56 @@
+- content_for :head do
+  = javascript_include_tag "http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js", "data-turbolinks-track" => true
+
+%center
+  %h2 Sign up
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), defaults: {label: false}, html: {class: 'form-horizontal', style: 'width: 600px; margin-left: auto; margin-right: auto;'}  ) do |f|
+  = f.error_notification
+
+  .form-group
+    .col-lg-3= f.label :email, required: true
+    .col-lg-9= f.input :email, required: true, autofocus: true 
+  .form-group
+    .col-lg-3= f.label :password, required: true
+    .col-md-9= f.input :password, :required => true 
+    .col-lg-3= f.label :password, label: "...again", required: true
+    .col-md-9= f.input :password_confirmation, :required => true 
+  .form-group
+    .col-lg-3= f.label :name, required: true
+    .col-md-9= f.input :name, required: true 
+  .form-group
+    .col-lg-3= f.label :surname, required: true
+    .col-md-9= f.input :surname, required: true 
+  .form-group
+    .col-lg-3=f.label :birthday  
+    .col-lg-9=f.input :birthday, as: :date, start_year: 1900, end_year: Date.today.year - 7, order: [:day, :month, :year] 
+  .form-group
+    .col-lg-3=f.label :gender
+    .col-lg-9=f.input :gender, required: true 
+
+  %hr/
+
+  .form-group
+    .col-lg-3=f.label :bio
+    .col-lg-9=f.input :bio, as: :text 
+  .form-group
+    .col-lg-3=f.label :website
+    .col-lg-9=f.input :website 
+  .form-group
+    .col-lg-3=f.label :stackoverflow
+    .col-lg-9=f.input :stackoverflow, placeholder: "Your StackOverflow username"  
+  .form-group
+    .col-lg-3=f.label :github
+    .col-lg-9=f.input :github, placeholder: "Your GitHub username"
+  .form-group
+    .col-lg-3=f.label :bitbucket
+    .col-lg-9=f.input :bitbucket, placeholder: "Your BitBucket username" 
+  .form-group
+    .col-lg-3=f.label :blog
+    .col-lg-9=f.input :blog  
+  .form-group
+    .col-lg-3=f.label :twitter
+    .col-lg-9=f.input :twitter, placeholder: "Your Twitter username" 
+
+  .form-actions
+    = f.button :submit, "Sign up" 
