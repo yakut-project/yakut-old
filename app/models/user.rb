@@ -19,4 +19,19 @@ class User < ActiveRecord::Base
   validates :bio, length: { maximum: 500 }
   validates :birthday, presence: true
 
+  def github_url
+    "https://github.com/#{github}" if github
+  end
+
+  def stackoverflow_url
+    "https://stackoverflow.com/#{stackoverflow}" if stackoverflow
+  end
+
+  def bitbucket_url
+    "https://bitbucket.org/#{bitbucket}" if bitbucket
+  end
+
+  def twitter_url
+    "https://twitter.com/#{twitter}" if twitter
+  end
 end
