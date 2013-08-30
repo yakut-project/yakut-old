@@ -3,4 +3,6 @@ class AdminsController < ApplicationController
   layout 'executive'
   def welcome
   end
+  def userlist
+  end
 end

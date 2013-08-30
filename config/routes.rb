@@ -7,6 +7,8 @@ Yakut::Application.routes.draw do
 
   get 'admins/welcome', to: 'admins#welcome'
 
+  get 'admins/userlist', to: 'admins#userlist'
+
   get 'teachers/welcome', to: 'teachers#welcome'
 
   get 'users/welcome', to: 'users#welcome'
