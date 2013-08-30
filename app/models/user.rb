@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   validates :birthday, presence: true
   validates :github, format: { with:  /[a-zA-Z0-9\- ]+/ }, :allow_blank => true
 
+  has_many :comments, dependent: :destroy
+
   def github_url
     "https://github.com/#{github}" if github
   end

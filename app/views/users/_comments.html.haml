@@ -1,0 +1,15 @@
+- unless @comments.empty?
+	.list-group
+		- @comments.each do |comment|
+			.list-group-item
+				%h4.list-group-item-heading= comment.teacher.email
+				%p.list-group-item-text= comment.body
+	
+	
+= simple_form_for(@comment) do |f|
+	= f.error_notification
+	.form-inputs
+		= f.input :user_id, :as => :hidden, :input_html => { :value => @user.id }
+		= f.input :body, label: "Enter your comment here:"
+	.form-actions
+		= f.button :submit

@@ -36,5 +36,8 @@
 				%tr
 					%td= n
 					%td= link_to @user.send("#{n.downcase}_url"), @user.send("#{n.downcase}_url")
-			
+-if current_teacher
+	.row
+		%h2 Comments
+		=render "users/comments"
 			
