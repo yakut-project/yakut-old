@@ -8,7 +8,7 @@
 .row
 	.col-md-4
 		%well
-			%center= gravatar_tag @user.email, size=200
+			%center= gravatar_tag @user.email, size: "200"
 		%table.table.table-striped{style: "margin-top: 20px;"}
 			%tr 
 				%td Email:
@@ -23,7 +23,7 @@
 		.well= @user.bio
 
 		%table.table.table-striped
-			- unless @user.blog.empty?
+			- unless @user.blog.blank?
 				%tr
 					%td Blog
 					%td= link_to @user.blog, @user.blog
@@ -32,7 +32,7 @@
 					%td= link_to @user.website, @user.website
 			
 			- infos = %w(Github Bitbucket StackOverflow Twitter)
-			- infos.select { |n| not @user.send("#{n.downcase}").empty? }.each do |n|
+			- infos.select { |n| not @user.send("#{n.downcase}").blank? }.each do |n|
 				%tr
 					%td= n
 					%td= link_to @user.send("#{n.downcase}_url"), @user.send("#{n.downcase}_url")
