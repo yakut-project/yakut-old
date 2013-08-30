@@ -11,6 +11,8 @@ Yakut::Application.routes.draw do
 
   get 'users/welcome', to: 'users#welcome'
 
+  resources :users, only: ["show"]
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 

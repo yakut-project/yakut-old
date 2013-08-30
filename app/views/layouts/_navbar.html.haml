@@ -16,7 +16,7 @@
 						%b.caret
 					%ul.dropdown-menu
 						-if current_user
-							%li= link_to 'My Account', edit_registration_path(logged_in)
+							%li= link_to 'My Account', user_path(logged_in)
 						-else
 							%li= link_to 'Dashboard', send("#{logged_in.class.name.tableize}_welcome_path")
 						%li= link_to 'Logout', destroy_session_path(logged_in), method: :DELETE
