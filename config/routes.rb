@@ -6,8 +6,9 @@ Yakut::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get 'admins/welcome', to: 'admins#welcome'
-
   get 'admins/userlist', to: 'admins#userlist'
+  get 'teachers/welcome', to: 'teachers#welcome'
+  get 'teachers/userlist', to: 'teachers#userlist'
 
   get 'teachers/welcome', to: 'teachers#welcome'
 
