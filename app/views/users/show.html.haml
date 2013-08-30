@@ -1,7 +1,8 @@
 %center
 	%h1 
-		.pull-right 
-			%small= link_to "Edit", edit_user_registration_path(@user)
+		- if @user == current_user
+			.pull-right 
+				%small= link_to "Edit", edit_user_registration_path(@user)
 		#{@user.name} #{@user.surname}
 	%hr/
 .row
