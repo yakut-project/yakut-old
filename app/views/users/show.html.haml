@@ -18,7 +18,7 @@
 				%td= @user.birthday.strftime "%D"
 			%tr
 				%td Gender:
-				%td= @user.gender
+				%td= @user.gender.humanize
 	.col-md-8
 		.well= @user.bio
 
