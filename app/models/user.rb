@@ -20,4 +20,19 @@ class User < ActiveRecord::Base
   validates :birthday, presence: true
   validates :github, format: { with:  /\^[a-z0-9_-]+\$/, message: "Only letters,digits and dashes allowed" }
 
+  def github_url
+    "https://github.com/#{github}" if github
+  end
+
+  def stackoverflow_url
+    "https://stackoverflow.com/#{stackoverflow}" if stackoverflow
+  end
+
+  def bitbucket_url
+    "https://bitbucket.org/#{bitbucket}" if bitbucket
+  end
+
+  def twitter_url
+    "https://twitter.com/#{twitter}" if twitter
+  end
 end

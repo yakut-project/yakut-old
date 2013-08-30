@@ -17,5 +17,12 @@ class ApplicationController < ActionController::Base
     				:blog, :twitter, :name, :surname, 
     				:bio, :birthday, :gender) 
     	end
+
+      devise_parameter_sanitizer.for(:account_update) do |u| 
+        u.permit(:email, :password, :password_confirmation, :website,
+            :stackoverflow, :github, :bitbucket,
+            :blog, :twitter, :name, :surname, 
+            :bio, :birthday, :gender, :current_password) 
+      end
     end
 end

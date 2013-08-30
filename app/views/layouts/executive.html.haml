@@ -3,9 +3,8 @@
 		= render 'layouts/head'
 		= stylesheet_link_tag    "executive", media: "all", "data-turbolinks-track" => true
 	%body
-		.container	
-			= render 'layouts/sidebar'
-			.row
-				= render 'layouts/notices'
-				= yield
+		= render 'layouts/sidebar'
+		.container
+			= render 'layouts/notices'
+			= yield
 		= render 'layouts/footer'
