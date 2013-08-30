@@ -1,0 +1,58 @@
+%h2 
+  %center Edit #{resource_name.to_s.humanize}
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, style: 'width: 600px; margin-left: auto; margin-right: auto;' }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, :required => true, :autofocus => true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
+    = f.input :password_confirmation, :required => false
+
+    .form-group
+      .col-lg-3= f.label :name, required: true
+      .col-md-9= f.input :name, required: true, label: false
+    .form-group
+      .col-lg-3= f.label :surname, required: true
+      .col-md-9= f.input :surname, required: true, label: false
+    .form-group
+      .col-lg-3=f.label :birthday  
+      .col-lg-9=f.input :birthday, as: :date, start_year: 1900, end_year: Date.today.year - 7, order: [:day, :month, :year] , label: false
+    .form-group
+      .col-lg-3=f.label :gender
+      .col-lg-9=f.input :gender, required: true , label: false
+
+    %hr/
+
+    .form-group
+      .col-lg-3=f.label :bio
+      .col-lg-9=f.input :bio, as: :text , label: false
+    .form-group
+      .col-lg-3=f.label :website
+      .col-lg-9=f.input :website , label: false
+    .form-group
+      .col-lg-3=f.label :stackoverflow
+      .col-lg-9=f.input :stackoverflow, placeholder: "Your StackOverflow username"  , label: false
+    .form-group
+      .col-lg-3=f.label :github
+      .col-lg-9=f.input :github, placeholder: "Your GitHub username", label: false
+    .form-group
+      .col-lg-3=f.label :bitbucket
+      .col-lg-9=f.input :bitbucket, placeholder: "Your BitBucket username" , label: false
+    .form-group
+      .col-lg-3=f.label :blog
+      .col-lg-9=f.input :blog  , label: false
+    .form-group
+      .col-lg-3=f.label :twitter
+      .col-lg-9=f.input :twitter, placeholder: "Your Twitter username" , label: false
+
+
+    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
+  .form-actions
+    = f.button :submit, "Update"
+%h3 Cancel my account
+%p
+  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
+= link_to "Back", :back

@@ -1,0 +1,23 @@
+%h1.text-center Users List
+
+%table.table.table-striped{style: "width: 600px; margin-left: auto; margin-right: auto;"}
+  %thead
+    %tr
+      %th
+        \#
+      %th
+        Name
+      %th
+        Surname
+      %th
+        Email
+      %th
+        Date of Birth
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.name
+        %td= user.surname
+        %td= user.email
+        %td= user.birthday.to_date

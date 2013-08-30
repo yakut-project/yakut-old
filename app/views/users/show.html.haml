@@ -1,0 +1,40 @@
+%center
+	%h1 
+		.pull-right 
+			%small= link_to "Edit", edit_user_registration_path(@user)
+		#{@user.name} #{@user.surname}
+	%hr/
+.row
+	.col-md-4
+		%well
+			%center= gravatar_tag @user.email, size: "200"
+		%table.table.table-striped{style: "margin-top: 20px;"}
+			%tr 
+				%td Email:
+				%td= @user.email
+			%tr
+				%td Birthday:
+				%td= @user.birthday.strftime "%d %B %Y"
+			%tr
+				%td Gender:
+				%td= @user.gender.humanize
+	.col-md-8
+		.well= @user.bio
+
+		%table.table.table-striped
+			- unless @user.blog.blank?
+				%tr
+					%td Blog
+					%td= link_to @user.blog, @user.blog
+			- unless @user.website.blank?
+				%tr
+					%td Website
+					%td= link_to @user.website, @user.website
+			
+			- infos = %w(Github Bitbucket StackOverflow Twitter)
+			- infos.select { |n| not @user.send("#{n.downcase}").blank? }.each do |n|
+				%tr
+					%td= n
+					%td= link_to @user.send("#{n.downcase}_url"), @user.send("#{n.downcase}_url")
+			
+			
