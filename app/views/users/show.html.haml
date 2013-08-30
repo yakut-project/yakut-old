@@ -27,6 +27,7 @@
 				%tr
 					%td Blog
 					%td= link_to @user.blog, @user.blog
+			- unless @user.website.blank?
 				%tr
 					%td Website
 					%td= link_to @user.website, @user.website
