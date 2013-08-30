@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+
+  def authenticate_any!
+     :authenticate_admin! || :authenticate_teacher! || :authenticate_user!
+  end
+
 	def configure_permitted_parameters
     	devise_parameter_sanitizer.for(:sign_up) do |u| 
     		u.permit(:email, :password, :password_confirmation, :website,
