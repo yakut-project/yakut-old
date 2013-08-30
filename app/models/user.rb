@@ -18,5 +18,6 @@ class User < ActiveRecord::Base
   validates :gender, presence:true
   validates :bio, length: { maximum: 500 }
   validates :birthday, presence: true
+  validates :github, format: { with:  /\^[a-z0-9_-]+\$/, message: "Only letters,digits and dashes allowed" }
 
 end
