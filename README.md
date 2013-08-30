@@ -36,5 +36,5 @@ Credits
 - Yusuf Kaya Er (Hardcore Overclocker)
 - Gökhan Sağırlar (Code Predator)
 
-* Sorted descending by number of commits.
+(Sorted descending by number of commits.)
 
