@@ -2,7 +2,9 @@
 	.list-group
 		- @comments.each do |comment|
 			.list-group-item
-				%h4.list-group-item-heading= comment.teacher.email
+				%h4.list-group-item-heading
+					= comment.teacher.email
+					%small.pull-right= comment.teacher.created_at
 				%p.list-group-item-text= comment.body
 	
 	
