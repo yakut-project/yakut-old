@@ -1,9 +1,8 @@
 %center
 	%h1 
-		#{@user.name} #{@user.surname}
 		.pull-right 
-			%a
-				%small= link_to "Edit", edit_user_registration_path(@user)
+			%small= link_to "Edit", edit_user_registration_path(@user)
+		#{@user.name} #{@user.surname}
 	%hr/
 .row
 	.col-md-4
